@@ -93,3 +93,19 @@ const searchMovies = async () => {
   }
 };
 
+// Function to clear search results
+const clearResults = () => {
+  moviesContainer.innerHTML = '';
+  renderMovies(currentMovies);
+};
+
+const clearResultsAndLoadOriginal = async () => {
+  searchInput.value = '';
+  query = '';
+  page = 1;
+  currentMovies = [];
+  const movies = await fetchMovies();
+  currentMovies = movies;
+  renderMovies(movies);
+};
+
