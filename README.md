@@ -41,7 +41,7 @@ Deployed Application (optional): [Flixster Deployed Site](https://gabrielpedroza
 ### Walkthrough Video
 
 <div style="text-align:center">
-    <img src="preview.gif" alt="Alt Text" width="500">
+    <img src="/project-preview.gif" alt="Alt Text" width="500">
 </div>
 
 ### Reflection
