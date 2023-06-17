@@ -120,3 +120,43 @@ const closeSearch = async () => {
   moviesContainer.classList.remove('search-active');
 };
 
+// Event listeners
+document.addEventListener('DOMContentLoaded', async () => {
+  const movies = await fetchMovies();
+  currentMovies = movies;
+  renderMovies(movies);
+});
+
+loadMoreButton.addEventListener('click', loadMoreMovies);
+
+clearButton.addEventListener('click', clearResultsAndLoadOriginal);
+
+searchButton.addEventListener('click', async () => {
+  query = searchInput.value.trim();
+  if (query !== '') {
+    await searchMovies();
+    searchInput.value = '';
+    moviesContainer.classList.add('search-active');
+  }
+});
+
+searchInput.addEventListener('keydown', async (event) => {
+  if (event.key === 'Enter') {
+    query = searchInput.value.trim();
+    if (query !== '') {
+      await searchMovies();
+      searchInput.value = '';
+      moviesContainer.classList.add('search-active');
+    }
+  }
+});
+
+searchInput.addEventListener('input', () => {
+  query = searchInput.value.trim();
+  if (query === '') {
+    clearResults();
+    moviesContainer.classList.remove('search-active');
+  }
+});
+
+closeSearchButton.addEventListener('click', closeSearch);
