@@ -62,3 +62,34 @@ const renderMovies = (movies) => {
   });
 };
 
+// Function to load more movies
+const loadMoreMovies = async () => {
+  page++;
+  let movies = [];
+  if (query === '') {
+    movies = await fetchMovies();
+  } else {
+    movies = await searchMovies();
+  }
+  currentMovies = [...currentMovies, ...movies];
+  renderMovies(currentMovies);
+};
+
+// Function to search movies
+const searchMovies = async () => {
+  const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}&page=${page}`;
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    const movies = data.results;
+    currentMovies = movies;
+    moviesContainer.innerHTML = '';
+    renderMovies(movies);
+    page++;
+    return movies;
+  } catch (error) {
+    console.log('Error searching movies:', error);
+    return [];
+  }
+};
+
