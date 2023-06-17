@@ -40,7 +40,9 @@ Deployed Application (optional): [Flixster Deployed Site](https://gabrielpedroza
 
 ### Walkthrough Video
 
-![Project Preview](project-preview.gif)
+<p align="center">
+  <img src="preview.gif" alt="Alt Text" width="500">
+</p>
 
 ### Reflection
 
