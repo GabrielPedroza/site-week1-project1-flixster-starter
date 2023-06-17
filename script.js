@@ -109,3 +109,14 @@ const clearResultsAndLoadOriginal = async () => {
   renderMovies(movies);
 };
 
+const closeSearch = async () => {
+  searchInput.value = '';
+  query = '';
+  page = 1;
+  currentMovies = [];
+  const movies = await fetchMovies();
+  currentMovies = movies;
+  renderMovies(movies);
+  moviesContainer.classList.remove('search-active');
+};
+
