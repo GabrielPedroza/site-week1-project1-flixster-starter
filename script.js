@@ -29,3 +29,36 @@ const fetchMovies = async () => {
   }
 };
 
+// Function to create movie card
+const createMovieCard = (movie) => {
+  const movieCard = document.createElement('div');
+  movieCard.classList.add('movie-card');
+
+  const movieImage = document.createElement('img');
+  movieImage.classList.add('movie-poster');
+  movieImage.src = `https://image.tmdb.org/t/p/w200/${movie.poster_path}`;
+  movieImage.alt = movie.title;
+  movieCard.appendChild(movieImage);
+
+  const movieVotes = document.createElement('p');
+  movieVotes.classList.add('movie-votes');
+  movieVotes.textContent = `⭐️ ${movie.vote_average}`;
+  movieCard.appendChild(movieVotes);
+
+  const movieTitle = document.createElement('p');
+  movieTitle.classList.add('movie-title');
+  movieTitle.textContent = movie.title;
+  movieCard.appendChild(movieTitle);
+
+  return movieCard;
+};
+
+// Function to render movies
+const renderMovies = (movies) => {
+  moviesContainer.innerHTML = '';
+  movies.forEach((movie) => {
+    const movieCard = createMovieCard(movie);
+    moviesContainer.appendChild(movieCard);
+  });
+};
+
