@@ -19,3 +19,84 @@ h1 {
   justify-content: center;
 }
 
+#now-playing {
+  margin-left: 2.5rem;
+}
+
+#search-input {
+  padding: 5px;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+}
+
+#search-button {
+  padding: 5px 10px;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+}
+
+#close-search-btn {
+  padding: 5px 10px;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+}
+
+#close-search-btn:hover,
+#search-button:hover {
+  cursor: pointer;
+}
+
+#movies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.movie-card {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  color: #fff;
+  background: linear-gradient(to bottom, rgba(34, 34, 34, 1) 80%, rgba(34, 34, 34, 0));
+  transition: transform 0.25s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+#load-more-movies-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+}
+
+#load-more-movies-btn:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 450px) {
+  .movie-card {
+    width: 100%;
+  }
+}
