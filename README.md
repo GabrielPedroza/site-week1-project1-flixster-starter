@@ -4,7 +4,7 @@ Submitted by: **Gabriel Pedroza**
 
 Estimated time spent: **6** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): [Flixster Deployed Site](https://gabrielpedroza.github.io/site-week1-project1-flixster-starter/)
 
 ### Application Features
 
